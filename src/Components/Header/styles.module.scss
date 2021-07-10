@@ -1,0 +1,182 @@
+.header {
+  &__container {
+    width: 280px;
+    margin: auto;
+    padding-top: 14px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 148px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_img {
+      width: 44px;
+      height: auto;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    order: 3;
+    margin: 15px auto 0;
+    width: 172px;
+    justify-content: space-between;
+
+    &_button {
+      border-radius: 15px;
+      border: 1px solid transparent;
+      background-color: #fff;
+      padding: 13px;
+
+      &__active {
+        border-radius: 15px;
+        padding: 13px;
+        background-color: none;
+        border: 1px solid #bdbdbd;
+      }
+
+      &_text {
+        display: none;
+      }
+
+      &_img {
+        width: 18px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__container {
+      width: 690px;
+      padding-top: 34px;
+    }
+
+    &__logo {
+      width: 44px;
+      &_text {
+        display: none;
+      }
+    }
+
+    &__navigation {
+      order: 0;
+      margin: 0;
+      width: 437px;
+
+      &_button {
+        display: flex;
+        align-items: center;
+
+        &__active {
+          display: flex;
+          align-items: center;
+        }
+
+        &_img {
+          width: 18px;
+          height: auto;
+        }
+        &_text {
+          display: inline;
+          margin-left: 10px;
+          font-family: 'Rubik';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+}
+
+.userInfoContainer {
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userName {
+  display: none;
+  font-size: 22px;
+  font-weight: 500;
+}
+.userPhotoContainer {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.userPhoto {
+  width: 100%;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 1250px) {
+  .header {
+    &__container {
+      width: 1220px;
+    }
+
+    &__logo {
+      width: 171px;
+
+      &_img {
+        width: 50px;
+        height: 50px;
+      }
+
+      &_text {
+        width: 106px;
+        display: block;
+      }
+    }
+
+    &__navigation {
+      width: 400px;
+      margin-left: 172px;
+
+      & > a:first-child {
+        display: none;
+      }
+
+      &_button {
+        padding: 12px 21px;
+
+        &__active {
+          padding: 12px 21px;
+        }
+        &_text {
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+  
+  .userInfoContainer {
+    width: 255px;
+  }
+  .userName {
+    display: inline;
+  }
+  .userPhotoContainer {
+    width: 50px;
+    height: 50px;
+  }
+  .userPhoto {
+    width: 40px;
+  }
+}
