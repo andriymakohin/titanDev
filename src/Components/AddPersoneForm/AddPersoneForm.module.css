@@ -1,0 +1,255 @@
+.addPersoneForm_container {
+  width: 320px;
+  height: 568px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+  position: relative;
+}
+
+.addPersoneForm_title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #333333;
+  padding-top: 50px;
+  margin: 0px 0px 30px 0px;
+}
+
+.addPersoneForm_label__name {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 20px 0px;
+}
+
+.addPersoneForm_title__name {
+  padding: 0;
+  margin: 0px 0px 10px 0px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #828282;
+}
+
+.addPersoneForm_input__name {
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 15px;
+  width: 280px;
+  height: 44px;
+  outline: none;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  padding-left: 20px;
+}
+
+.addPersoneForm_input__name::placeholder {
+  color: #828282;
+}
+
+.addPersoneForm_title__gender {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #828282;
+  margin: 0px 0px 10px 0px;
+}
+
+.addPersoneForm_block__gender {
+  margin: 0px 0px 30px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.addPersoneForm_label__gender {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.addPersoneForm_gender {
+  display: block;
+  margin: 0px 18px 0px 0px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #828282;
+  height: 44px;
+  box-sizing: border-box;
+  padding-top: 12px;
+}
+
+.addPersoneForm_input__gender {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.addPersoneForm_gender__radioBlock {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background: #ffffff;
+  width: 44px;
+  height: 44px;
+  margin-right: 15px;
+}
+
+.addPersoneForm_block__buttons {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+
+.addPersoneForm_button__cancel {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #828282;
+  width: 220px;
+  height: 44px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.addPersoneForm_button__save {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: #ff8626;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+  width: 220px;
+  height: 44px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.addPersoneForm_gender__radioBlock_active {
+  border: 1px solid #ff8626;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: #fff;
+  width: 44px;
+  height: 44px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.addPersoneForm_gender__radioBlock_active::before {
+  content: '';
+  background-image: url('../../assets/AddPersoneForm-Images/Star.svg');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  left: 32%;
+  top: 32%;
+}
+
+.addPersoneForm_button__close {
+  background: url('../../assets/AddPersoneForm-Images/close.svg') no-repeat;
+  width: 10px;
+  height: 10px;
+  outline: none;
+  display: block;
+  border: none;
+  box-sizing: border-box;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  display: block;
+}
+
+.addPersoneForm_button__close:focus {
+  outline: none;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .addPersoneForm_container {
+    border-radius: 20px;
+    padding: 0px;
+    width: 575px;
+    height: 383px;
+  }
+
+  .addPersoneForm_title {
+    font-size: 26px;
+    line-height: 31px;
+    color: #333333;
+  }
+
+  .addPersoneForm_label__name {
+    margin: 0px 0px 20px 117px;
+  }
+
+  .addPersoneForm_input__name {
+    width: 340px;
+  }
+
+  .addPersoneForm_title__gender {
+    margin: 0px 0px 10px 117px;
+  }
+
+  .addPersoneForm_block__gender {
+    margin: 0px 0px 30px 117px;
+  }
+
+  .addPersoneForm_gender {
+    margin: 0px 20px 0px 0px;
+  }
+
+  .addPersoneForm_block__buttons {
+    margin-left: 60px;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .addPersoneForm_button__save {
+    margin-bottom: 0px;
+  }
+
+  .addPersoneForm_button__save:hover {
+    background: #ffa273;
+    transition: 250ms;
+  }
+
+  .addPersoneForm_button__cancel:hover {
+    background: #ffa273;
+    transition: 250ms;
+  }
+
+  .addPersoneForm_label__gender:hover .addPersoneForm_gender__radioBlock {
+    border: 1px solid #ff8626;
+    transition: 250ms;
+  }
+}

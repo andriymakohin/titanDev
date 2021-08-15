@@ -1,0 +1,14 @@
+.flash-enter {
+  transform: translateX(-200%);
+}
+.flash-enter-active {
+  transform: translateX(0);
+  transition: transform 500ms ease-in;
+}
+.flash-exit {
+  transform: translateX(0);
+}
+.flash-exit-active {
+  transform: translateX(-200%);
+  transition: transform 500ms ease-out;
+}
