@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 export default function Logo() {
   const history = useHistory();
   const location = useLocation();
-  const whiteLogoLocations = ['/', '/login'];
+  const whiteLogoLocations = ['/', '/login', '/register'];
 
   const handleRedirect = () => {
     history.push('/main');
@@ -20,14 +20,14 @@ export default function Logo() {
       <img
         className={styles.header__logo_img}
         onClick={handleRedirect}
-        alt="logo"
+        alt='logo'
         src={
           whiteLogoLocations.includes(location.pathname)
             ? logoWhite
             : logoOrange
         }
       />
-      <h1 className={styles.header__logo_text}>Планер</h1>
+      <h1 className={styles.header__logo_text}>Planer</h1>
     </div>
   );
 }

@@ -1,3 +1,21 @@
+.appear {
+  opacity: 0;
+}
+
+.appearActive {
+  opacity: 1;
+  transition: opacity 700ms linear;
+}
+
+.enter {
+  opacity: 0;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: opacity 700ms linear;
+}
+
 .header {
   &__container {
     width: 280px;
@@ -99,31 +117,6 @@
   }
 }
 
-.userInfoContainer {
-  width: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.userName {
-  display: none;
-  font-size: 22px;
-  font-weight: 500;
-}
-.userPhotoContainer {
-  background-color: #fff;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-.userPhoto {
-  width: 100%;
-  border-radius: 50%;
-}
-
 @media screen and (min-width: 1250px) {
   .header {
     &__container {
@@ -164,19 +157,5 @@
         }
       }
     }
-  }
-  
-  .userInfoContainer {
-    width: 255px;
-  }
-  .userName {
-    display: inline;
-  }
-  .userPhotoContainer {
-    width: 50px;
-    height: 50px;
-  }
-  .userPhoto {
-    width: 40px;
   }
 }

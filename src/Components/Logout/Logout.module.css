@@ -1,0 +1,71 @@
+.logoutContainer {
+  padding: 25px;
+  border: 1px solid;
+  width: 300px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.logoutText {
+  font-size: 21px;
+  margin-bottom: 23px;
+}
+.logoutButtonContainer {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+.logoutButton {
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  border: 1px solid #ff8626;
+  color: #333333;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.logoutButton:hover {
+  background-color: #ff8626;
+  color: #fff;
+}
+/* .userInfoContainer {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .userName {
+    display: none;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .userPhotoContainer {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .userPhoto {
+    width: 24px;
+  }
+  @media (min-width: 1200px) {
+    .userInfoContainer {
+      width: 255px;
+    }
+    .userName {
+      display: inline;
+    }
+    .userPhotoContainer {
+      width: 50px;
+      height: 50px;
+    }
+    .userPhoto {
+      width: 40px;
+    }
+  }
+   */ ;

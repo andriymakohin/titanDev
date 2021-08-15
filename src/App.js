@@ -1,88 +1,88 @@
-import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { navigation } from "./nav/navigation";
-import Main from "./pages/Main/Main";
-import Login from "./pages/Login/Login";
+import React, { useEffect} from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { withCookies} from 'react-cookie';
+import queryString from 'query-string';
 
-function App() {
-  const { token } = useSelector((state) => state.session);
-  const RouteLogin = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={(props) =>
-        token ? (
-          <Component {...props} />
-        ) : (
-            <Redirect
-              to={{
-                pathname: navigation.redirect,
-                state: { from: props.location },
-              }}
-            />
-          )
-      }
-    />
-  );
-  const RouteNoLogin = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={(props) =>
-        !token ? (
-          <Component {...props} />
-        ) : (
-            <Redirect
-              to={{ pathname: navigation.home, state: { from: props.location } }}
-            />
-          )
-      }
-    />
-  );
-  const RoutePresentPage = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={(props) =>
-        token ? (
-          <Component {...props} />
-        ) : (
-            <Redirect
-              to={{
-                pathname: navigation.redirect,
-                state: { from: props.location },
-              }}
-            />
-          )
-      }
-    />
-  );
-  const PrivateTasksPage = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={(props) =>
-        token ? (
-          <Component {...props} />
-        ) : (
-            <Redirect
-              to={{
-                pathname: navigation.redirect,
-                state: { from: props.location },
-              }}
-            />
-          )
-      }
-    />
-  );
+import SiginUpPage from './components/SiginUpPage/SiginUpPage';
+import AuthPage from './components/AuthPage/AuthPage';
+import Main from './components/MainPage/MainPage.js';
+import PersoneTaskPage from './components/PersoneTaskPage/PersoneTaskPage';
+import PrivateRouter from './components/MainPage/PrivateRoutes';
+import PresentPage from './components/PresentsPage/PresentPage';
+import TasksPage from './components/TasksPage';
+
+import SignInPage from './components/SignInPage/SignInPage';
+
+import './assets/fonts.css';
+import './assets/basic.css';
+import authOperation from './redux/operations/authOperations';
+import taskOperations from './redux/operations/tasksOperation';
+import presentOperations from './redux/operations/presentOperation';
+import personerenOperation from './redux/operations/getAllPersones';
+import Layout from './components/Layout/Layout';
+
+const App = ({
+  userToken,
+  onGetCurrentUser,
+  getAllTasks,
+  getAllPresents,
+  getAllPersone,
+  setTokenState,
+}) => {
+  const loc = window.location.search;
+  const token = queryString.parse(loc);
+
+  useEffect(() => {
+    if (token.refreshToken) {
+      setTokenState({
+        accessToken: token.token,
+        refreshToken: token.refreshToken,
+      });
+    }
+    onGetCurrentUser();
+    if (userToken) {
+      getAllPersone();
+      getAllTasks();
+      getAllPresents();
+    }
+  }, []);
+
   return (
-    <div>
+    <>
       <Switch>
-        <RouteLogin path={navigation.home} component={Main} />
-        <RouteNoLogin path={navigation.login} component={Login} />
-        <RoutePresentPage path="/presents" component={Main} />
-        <PrivateTasksPage path="/tasks" exact component={Main} />
-        <Redirect to={navigation.login} />
+        <Route path="/" exact component={AuthPage} />
+        <Route path="/login" exact component={SignInPage} />
+        <Route path="/register" component={SiginUpPage} />
+        {userToken && (
+          <>
+            <Layout />
+            <PrivateRouter path="/main" exact component={Main} />
+            <PrivateRouter path="/presents" exact component={PresentPage} />
+            <PrivateRouter
+              path="/personeTasks/:name/:gender"
+              exact
+              component={PersoneTaskPage}
+            />
+            <PrivateRouter path="/tasks" exact component={TasksPage} />
+          </>
+        )}
+        <Redirect to={'/'} />
       </Switch>
-    </div>
+    </>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => ({
+  userToken: state.user.accessToken,
+});
+
+const mapDispatchProps = (dispatch) => ({
+  setTokenState: (tokens) => dispatch(authOperation.setTokenState(tokens)),
+  onGetCurrentUser: () => dispatch(authOperation.getCurrentUser()),
+  getAllTasks: () => dispatch(taskOperations.getAllTasks()),
+  getAllPresents: () => dispatch(presentOperations.getAllPresents()),
+  getAllPersone: () => dispatch(personerenOperation.getPersones()),
+});
+
+export default connect(mapStateToProps, mapDispatchProps)(withCookies(App));

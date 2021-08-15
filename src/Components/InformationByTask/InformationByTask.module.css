@@ -1,0 +1,236 @@
+.container {
+  display: flex;
+  padding: 30px;
+  width: 690px;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 20px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+.firstSmallContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 255px;
+}
+.secondSmallContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 241px;
+}
+.personePhotoContainer {
+  background-color: #f9cada;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.userPhoto {
+  width: 75px;
+}
+.taskName {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.taskCostText {
+  font-size: 22px;
+}
+.taskDayText {
+  font-family: Rubik, Arial, Helvetica, sans-serif;
+
+  font-size: 22px;
+}
+.costContainer {
+  display: flex;
+}
+.taskCostStar {
+  margin-right: 5px;
+}
+.greyTitle {
+  font-family: Rubik, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #828282;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.timeContainer {
+  text-align: right;
+}
+.confirmationContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 95px;
+}
+.confirmationButton {
+  border-radius: 15px;
+  border: 2px solid #ffbe9d;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+}
+.confirmationButton:hover {
+  background-color: #ffdfcf;
+  border-color: #ffdfcf;
+  cursor: pointer;
+}
+.confirmationButton:focus {
+  outline: none;
+}
+.additionButton {
+  background-color: #fff;
+  border: none;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: #a3a3a3;
+  height: 0px;
+  /* width: 10px; */
+  /* font-size: 15px;
+  line-height: 15px; */
+}
+.idx {
+  font-size: 25px;
+}
+.additionButton:focus {
+  outline: none;
+}
+.additionButton:hover {
+  cursor: pointer;
+}
+
+.submenu {
+  display: flex;
+  position: absolute;
+  border-radius: 10px;
+  padding: 5px;
+  height: 78px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #dddddd;
+  top: 30px;
+  right: 22px;
+  z-index: 10;
+}
+.submenu::before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 10px;
+  top: -15px;
+  border: 8px solid;
+  border-color: transparent #dddddd #dddddd transparent;
+}
+.additionButton:hover {
+  color: #333333;
+}
+.additionButton:focus {
+  color: #333333;
+}
+
+.submenuItem {
+  padding: 8px 15px;
+  border-radius: 7px;
+  background-color: #eeeeee;
+  text-align: center;
+  border: none;
+}
+.submenuItem:hover {
+  background-color: #ffbe9d;
+  color: #fff;
+}
+.submenuItem:focus-within {
+  display: block;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 280px;
+    padding: 15px;
+  }
+  .firstSmallContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-bottom: 15px;
+  }
+  .secondSmallContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+  }
+  .taskNameAndCostContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 210px;
+    align-items: center;
+  }
+  .taskCostStar {
+    height: 18px;
+  }
+  .costContainer {
+    align-items: center;
+    height: 30px;
+  }
+  .taskName {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .personePhotoContainer {
+    width: 30px;
+    height: 30px;
+  }
+  .userPhoto {
+    width: 20px;
+  }
+  .taskCostText {
+    font-size: 18px;
+  }
+  .timeContainer {
+    text-align: left;
+  }
+  .additionButton {
+    top: 13px;
+    right: 10px;
+  }
+}
+/* 
+from habb */
+
+.modalmini {
+  position: absolute;
+  font-family: Rubik, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  top: 30px;
+  right: 12px;
+  width: 133px;
+  height: 88px;
+  background-color: #fff;
+  box-shadow: 0 0 10px black;
+  padding: 10px 6px 6px 6px;
+  border-radius: 10px;
+}
+.btn__modal {
+  display: block;
+  text-align: center;
+  width: 123px;
+  height: 34px;
+  border: none;
+  padding: 0;
+  background: #fff;
+  margin: 0;
+  border-radius: 3px;
+}
+.btn__modal:hover {
+  cursor: pointer;
+  background-color: #ffbe9d;
+  color: #fff;
+}
+.btn__modal:focus {
+  outline: none;
+}

@@ -1,0 +1,94 @@
+.navContainer {
+  width: 434px;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.familyBlock {
+  width: 96px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.taskBlock {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.presentBlock {
+  width: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.familyBlock:hover,
+.taskBlock:hover,
+.presentBlock:hover {
+  background-color: #e5e5e5;
+}
+
+.img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.text {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@media (min-width: 768px) {
+  .navContainer {
+    width: 400px;
+    height: 50px;
+  }
+
+  .familyBlock {
+    display: none;
+  }
+}
+
+@media (max-width: 546px) {
+  .navContainer {
+    width: 172px;
+    height: 44px;
+  }
+
+  .familyBlock {
+    width: 44px;
+    border-radius: 15px;
+  }
+
+  .taskBlock {
+    width: 44px;
+    border-radius: 15px;
+  }
+
+  .presentBlock {
+    width: 44px;
+    border-radius: 15px;
+  }
+
+  .img {
+    margin: 0 auto;
+  }
+
+  .text {
+    display: none;
+  }
+}

@@ -1,51 +1,31 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import ModalForm from "./ModalForm/ModalForm";
-import { loginOut, modalLogout } from "../../redux/slice";
-import styles from "./Modal.module.css";
+import React, { Component } from 'react';
+import './Modal.css';
 
-const {
-  modalWrapper,
-  modalContent,
-  modalLogout_p,
-  modalLogout_btn,
-  yes_no_btn_header,
-} = styles;
+export default class Modal extends Component {
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
+    window.scrollTo({ top: 0 });
+  }
 
-const Modal = () => {
-  const dispatch = useDispatch();
-
-  const closeModal = () => {
-    dispatch(modalLogout(false));
+  handleKeyDown = (e) => {
+    if (e.code === 'Escape') {
+      this.props.onClose();
+    }
   };
 
-  return (
-    <ModalForm onClose={closeModal}>
-      <div className={modalWrapper}>
-        <div className={modalContent}>
-          <p className={modalLogout_p}>Ти дійсно бажаєш вийти🤔?</p>
-          <div className={modalLogout_btn}>
-            <button
-              type="button"
-              className={yes_no_btn_header}
-              onClick={() => dispatch(loginOut(), closeModal())}
-            >
-              Так
-            </button>
-            <button
-              type="button"
-              className={yes_no_btn_header}
-              onClick={() => {
-                closeModal();
-              }}
-            >
-              Ні
-            </button>
-          </div>
-        </div>
-      </div>
-    </ModalForm>
-  );
-};
+  handkeCLick = () => {
+    this.props.onClose();
+  };
 
-export default Modal;
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
+  render() {
+    return (
+      <>
+        <div onClick={this.handkeCLick} className="Overlay"></div>
+        <div className="Modal">{this.props.persone || this.props.children }</div>
+      </>
+    );
+  }
+}

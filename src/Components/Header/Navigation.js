@@ -21,7 +21,7 @@ export default function Navigation() {
         }
         to="/main"
       >
-        <img className={styles.header__navigation_button_img} alt="family" src={family} />
+        <img className={styles.header__navigation_button_img} src={family} />
         <span className={styles.header__navigation_button_text}>Сім'я</span>
       </NavLink>
       <Media
@@ -31,7 +31,23 @@ export default function Navigation() {
           large: '(min-width: 1250px)',
         }}
       >
-        {(matches) =>
+
+        {/* {(matches) => (
+          <>
+        {!matches.large && (
+          <NavLink
+        className={
+          location.pathname === '/main'
+            ? styles.header__navigation_button__active
+            : styles.header__navigation_button
+        }
+        to="/main"
+      >
+        <img className={styles.header__navigation_button_img} src={family} alt='family' />
+        <span className={styles.header__navigation_button_text}>Сім'я</span>
+      </NavLink>
+        )} */}
+      {(matches) =>
           matches.large ? (
             <NavLink
               className={
@@ -43,8 +59,8 @@ export default function Navigation() {
             >
               <img
                 className={styles.header__navigation_button_img}
-                alt="task"
                 src={task}
+                alt='task'
               />
               <span className={styles.header__navigation_button_text}>
                 Задачі
@@ -61,8 +77,8 @@ export default function Navigation() {
             >
               <img
                 className={styles.header__navigation_button_img}
-                alt="task"
                 src={task}
+                alt="task"
               />
               <span className={styles.header__navigation_button_text}>
                 Задачі
@@ -70,6 +86,8 @@ export default function Navigation() {
             </NavLink>
           )
         }
+        {/* </>
+        )} */}
       </Media>
 
       <NavLink
@@ -80,7 +98,7 @@ export default function Navigation() {
         }
         to="/presents"
       >
-        <img className={styles.header__navigation_button_img} alt="present" src={present} />
+        <img className={styles.header__navigation_button_img} src={present} alt="present" />
         <span className={styles.header__navigation_button_text}>Подарунки</span>
       </NavLink>
     </div>

@@ -1,0 +1,179 @@
+.changetask {
+  &__form {
+    width: 575px;
+    height: 557px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    position: relative;
+    background-color: #fff;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    stroke: #bdbdbd;
+    transition: 250ms;
+    &:hover {
+      cursor: pointer;
+      stroke: black;
+    }
+  }
+
+  &__title {
+    font-family: 'Rubik';
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 31px;
+    color: #333333;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    margin-bottom: 10px;
+
+    &Select {
+      display: block;
+      width: 18px;
+      height: 16px;
+      position: absolute;
+      bottom: 21px;
+      right: 5px;
+    }
+
+    &Star {
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 35px;
+      left: 20px;
+    }
+
+    &Mod {
+      width: 340px;
+    }
+
+    &Long {
+      width: 340px;
+      height: 44px;
+      outline: none;
+      border: 1px solid #bdbdbd;
+      border-radius: 15px;
+
+      margin-bottom: 10px;
+      padding: 0 20px;
+
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    &Short {
+      width: 170px;
+      padding-left: 47px;
+
+      // text-decoration: underline;
+      &::placeholder {
+        // text-decoration: underline;
+      }
+    }
+
+    & > label {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      color: #828282;
+
+      margin-bottom: 10px;
+    }
+  }
+
+  &Text {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+    margin-left: 15px;
+
+    transition: 250ms;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__btns {
+    margin-top: 20px;
+  }
+
+  &__button {
+    width: 220px;
+    height: 44px;
+    margin: 3px;
+    background: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 20px;
+
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #828282;
+
+    transition: 250ms;
+
+    &:hover {
+      background: #ffa273;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .changetask {
+    &__form {
+      width: 320px;
+      height: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    &__input {
+      &Long {
+        width: 280px;
+      }
+      &Mod {
+        width: 280px;
+      }
+      &Short {
+        width: 170px;
+      }
+    }
+
+    &__btns {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__buttonOrange {
+      margin: 0;
+      margin-bottom: 15px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.tasksContainer_container {
+  width: 280px;
+}
+
+.tasksContainer_header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  height: 40px;
+}
+
+.tasksContainer_genderImage {
+  width: 30px;
+  height: 30px;
+  align-self: flex-end;
+}
+
+.tasksContainer_name {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  align-items: center;
+  text-transform: capitalize;
+  color: #333333;
+  align-self: flex-end;
+  margin-left: 15px;
+}
+
+.tasksContainer_alternative {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  align-items: center;
+  text-transform: capitalize;
+  color: #333333;
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  .tasksContainer_name {
+    line-height: 28px;
+    font-size: 26px;
+  }
+  .tasksContainer_genderImage {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1250px) {
+}
